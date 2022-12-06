@@ -7,4 +7,5 @@ export interface Drink {
     image: string;
     ingredients: string[];
     measures: string[];
+    editable: boolean;
 }
