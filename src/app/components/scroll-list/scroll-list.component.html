@@ -1,0 +1,18 @@
+<div class="main-box">
+    <img
+        class="main-image"
+        src=""
+      />
+
+    <div class="images-box" *ngIf="!(loading$ | async)">
+      <div *ngFor="let drink of drinks$ | async">
+      <a [routerLink]="['drinks', drink.id]">
+        <h2>{{ drink.name }}</h2>
+        <img [src]="drink.image" [alt]="drink.name">
+      </a>
+      </div>
+      
+    </div>
+  
+  </div>
+
