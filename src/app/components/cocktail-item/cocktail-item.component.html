@@ -1,0 +1,18 @@
+<!-- <section [ngClass]="{'dark-theme': darkMode$ | async}"> -->
+    <div  *ngIf="drink$ | async as drink">
+      <a [routerLink]="['cocktail', drink.id]">
+        <h2>{{ drink.name }}</h2>
+        <img [src]="drink.image" [alt]="drink.name">
+      </a>
+      <ul>
+        <li *ngFor="let ing of drink.ingredients, index as i">{{ing}} - {{drink.measures[i]}}</li>
+      </ul>
+      <div *ngIf="drink.editable">
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+      
+      
+      <!-- <a class="back-btn" [routerLink]="['']">Back</a> -->
+    </div>
+  <!-- </section> -->

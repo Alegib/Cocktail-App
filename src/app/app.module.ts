@@ -13,6 +13,10 @@ import { UserPageComponent } from './components/user-page/user-page.component';
 import { ScrollListComponent } from './components/scroll-list/scroll-list.component';
 import { ROOT_REDUCERS } from './state/app.state';
 import { DrinksEffects } from './state/effects/cocktail.effect';
+import { CreateCocktailComponent } from './components/create-cocktail/create-cocktail.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { CocktailItemComponent } from './components/cocktail-item/cocktail-item.component';
+import { DrinkItemEffects } from './state/effects/drink-item.effect';
 
 
 @NgModule({
@@ -21,7 +25,10 @@ import { DrinksEffects } from './state/effects/cocktail.effect';
     RandomCocktailComponent,
     NavBarComponent,
     UserPageComponent,
-    ScrollListComponent
+    ScrollListComponent,
+    CreateCocktailComponent,
+    HomePageComponent,
+    CocktailItemComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,7 @@ import { DrinksEffects } from './state/effects/cocktail.effect';
     HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    EffectsModule.forRoot([DrinksEffects])
+    EffectsModule.forRoot([DrinksEffects, DrinkItemEffects])
 
   ],
   providers: [],

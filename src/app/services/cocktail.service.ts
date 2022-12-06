@@ -14,4 +14,8 @@ export class CocktailService {
   getAllDrinks(): Observable<Drink[]>{
     return this.http.get<Drink[]>(this.JSON_DB).pipe(delay(1000));
   }
+
+  getDrinkById(id: number): Observable<Drink>{
+    return this.http.get<Drink>(`${this.JSON_DB}${id}`)
+  }
 }
