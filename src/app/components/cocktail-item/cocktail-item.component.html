@@ -4,9 +4,14 @@
         <h2>{{ drink.name }}</h2>
         <img [src]="drink.image" [alt]="drink.name">
       </a>
+      <h3>Ingredients:</h3>
       <ul>
         <li *ngFor="let ing of drink.ingredients, index as i">{{ing}} - {{drink.measures[i]}}</li>
       </ul>
+
+      <h3>Instructions:</h3>
+      <p>{{drink.instructions}}</p>
+      <p></p>
       <div *ngIf="drink.editable">
         <button>Edit</button>
         <button>Delete</button>

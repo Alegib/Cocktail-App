@@ -17,6 +17,9 @@ import { CreateCocktailComponent } from './components/create-cocktail/create-coc
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CocktailItemComponent } from './components/cocktail-item/cocktail-item.component';
 import { DrinkItemEffects } from './state/effects/drink-item.effect';
+import { ReactiveFormsModule } from '@angular/forms';
+import { deleteDrink } from './state/actions/delete-drink.action';
+import { CreateDrinkEffects } from './state/effects/create-drink.effect';
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import { DrinkItemEffects } from './state/effects/drink-item.effect';
     HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    EffectsModule.forRoot([DrinksEffects, DrinkItemEffects])
+    EffectsModule.forRoot([DrinksEffects, DrinkItemEffects, CreateDrinkEffects]),
+    ReactiveFormsModule
 
   ],
   providers: [],
