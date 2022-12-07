@@ -20,6 +20,8 @@ import { DrinkItemEffects } from './state/effects/drink-item.effect';
 import { ReactiveFormsModule } from '@angular/forms';
 import { deleteDrink } from './state/actions/delete-drink.action';
 import { CreateDrinkEffects } from './state/effects/create-drink.effect';
+import { DeleteDrinkEffects } from './state/effects/delete-drink.effect';
+import { EditDrinkEffects } from './state/effects/edit-drink.effect';
 
 
 @NgModule({
@@ -39,7 +41,7 @@ import { CreateDrinkEffects } from './state/effects/create-drink.effect';
     HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    EffectsModule.forRoot([DrinksEffects, DrinkItemEffects, CreateDrinkEffects]),
+    EffectsModule.forRoot([DrinksEffects, DrinkItemEffects, CreateDrinkEffects, DeleteDrinkEffects, EditDrinkEffects]),
     ReactiveFormsModule
 
   ],

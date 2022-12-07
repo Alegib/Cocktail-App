@@ -1,7 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
-import { Drink } from "src/app/models/drink";
 import { deleteDrink } from "../actions/delete-drink.action";
-import { loadDrink } from "../actions/drink-item.action";
+
 
 
 export interface DeleteDrinkState {

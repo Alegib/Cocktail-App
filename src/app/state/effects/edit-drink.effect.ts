@@ -3,21 +3,21 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { map, mergeMap } from "rxjs";
 import { CocktailService } from "src/app/services/cocktail.service";
 
-import { deleteDrink, deleteDrinkSuccess } from "../actions/delete-drink.action";
+import { editDrink, editDrinkSuccess } from "../actions/edit-drink.action";
 
 @Injectable()
-export class DeleteDrinkEffects {
+export class EditDrinkEffects {
   constructor(
     private actions$: Actions,
     private cocktailService: CocktailService
   ) {}
 
-  deleteDrink$ = createEffect(() => {
+  editDrink$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(deleteDrink),
-      mergeMap(action => this.cocktailService.deleteDrinkById(action.id)
+      ofType(editDrink),
+      mergeMap(action => this.cocktailService.editDrink(action.id, action.drink)
         .pipe(
-          map(result => deleteDrinkSuccess() 
+          map(result => editDrinkSuccess() 
           )
         ),
       )
