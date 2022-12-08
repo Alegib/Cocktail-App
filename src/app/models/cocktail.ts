@@ -6,7 +6,8 @@ export class Cocktail {
     image: string;
     ingredients: string[];
     measures: string[];
-    constructor(name: string, category: string, alcoholic: boolean,  instructions: string,  image: string, ingredients: string[], measures: string[]){
+    editable: boolean;
+    constructor(name: string, category: string, alcoholic: boolean,  instructions: string,  image: string, ingredients: string[], measures: string[], editable: boolean){
         this.name = name;
         this.category = category;
         this.alcoholic = alcoholic;
@@ -14,6 +15,7 @@ export class Cocktail {
         this.image = image;
         this.ingredients = ingredients;
         this.measures = measures;
+        this.editable = editable;
     }
 
     public getName(){
@@ -43,6 +45,12 @@ export class Cocktail {
         return this.measures;
     }
 
+    public getEditable(){
+        return this.editable;
+    }
+    
+
+
     public setName(name:string){
         this.name = name;
     }
@@ -68,6 +76,10 @@ export class Cocktail {
 
    public setMeasures(measures: string[]){
         this.measures = measures;
+    }
+
+    public setEditable(editable: boolean){
+        this.editable = editable;
     }
 
   } 

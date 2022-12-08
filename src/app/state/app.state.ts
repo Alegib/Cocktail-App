@@ -4,6 +4,7 @@ import { deleteDrinkReducer, DeleteDrinkState } from "./reducers/delete-drink.re
 import { drinkItemReducer, DrinkItemState } from "./reducers/drink-item.reducer";
 import { drinksReducer, DrinkState } from "./reducers/drinks.reducer";
 import { editDrinkReducer, EditDrinkState } from "./reducers/edit-drink.reducer";
+import { navBarReducer } from "./reducers/nav-bar.reduce";
 
 
 export interface AppState {
@@ -12,6 +13,7 @@ export interface AppState {
     createDrinkState: CreateDrinkState
     deleteDrinkState: DeleteDrinkState
     editDrinkState: EditDrinkState
+    navBarState: boolean
   }
 
   export const ROOT_REDUCERS: ActionReducerMap<AppState> = {
@@ -19,6 +21,6 @@ export interface AppState {
     drinkItemState: drinkItemReducer,
     createDrinkState: createDrinkReducer,
     deleteDrinkState: deleteDrinkReducer,
-    editDrinkState: editDrinkReducer
-    
+    editDrinkState: editDrinkReducer,
+    navBarState: navBarReducer
   };
