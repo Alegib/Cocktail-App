@@ -1,43 +1,31 @@
-
 <div class="container">
-    <form (ngSubmit)="createCocktail()" [formGroup]="createForm">
+    <form (ngSubmit)="editDrink()" [formGroup]="editForm">
       <div>
         <input type="text" placeholder="Name..." [formControl]="nameInput" />
-        <p class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
-          Name error.....
-        </p>
+        
+      </div>
+
+      <div>
+        <input type="text"  [formControl]="imageInput" />
+       
+      </div>
+      <div>
+        <input type="text"  [formControl]="instructionsInput" />
+
       </div>
       <div>
         <select [formControl]="categoryInput">
           <option value="" invalid>Select a gender</option>
-          <option *ngFor="let category of categories" [value]="category">
+          <option *ngFor="let category of categories" [ngValue]="category">
             {{ category | titlecase }}
           </option>
         </select>
-        <p class="error-msg" *ngIf="categoryInput.invalid && categoryInput.touched">
-          Category error.....
-        </p>
+        
       </div>
-      <div>
-        <input type="text" placeholder="Image Url..." [formControl]="imageInput" />
-        <p class="error-msg" *ngIf="imageInput.invalid && imageInput.touched">
-          Image error.....
-        </p>
-      </div>
-      <div>
-        <textarea type="text" placeholder="Instructions..." [formControl]="instructionsInput"></textarea>
-        <p
-          class="error-msg"
-          *ngIf="instructionsInput.invalid 
-                  && instructionsInput.touched"
-        >
-          Instructions error.....
-        </p>
-      </div>
-      
       <div>
         <label for="alcoholic">Alcoholic</label>
         <input id="alcoholic" type="checkbox"  [formControl]="alcoholicInput" />
+        
       </div>
       <div>
         <label for="ingredients">Ingredients</label>
@@ -53,7 +41,7 @@
           Measures error.....
         </p>
       </div>
-      
-      <button type="submit" [disabled]="createForm.invalid">Submit</button>
+      <button type="submit" [disabled]="editForm.invalid">Edit</button>
     </form>
   </div>
+ 

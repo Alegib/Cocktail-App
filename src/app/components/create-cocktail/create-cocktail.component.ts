@@ -1,4 +1,14 @@
 import { Component } from '@angular/core';
+import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Drink } from 'src/app/models/drink';
+import { createDrink, initCreateDrink } from 'src/app/state/actions/create-drink.action';
+import { loadingDrinks } from 'src/app/state/actions/drink.actions';
+import { AppState } from 'src/app/state/app.state';
+import { selectCreateDrinkSuccess } from 'src/app/state/selectors/create-drink.selector';
+import { selectDrinks } from 'src/app/state/selectors/drinks.selector';
 
 @Component({
   selector: 'app-create-cocktail',
@@ -6,51 +16,96 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-cocktail.component.css']
 })
 export class CreateCocktailComponent {
-  roles: string[];
+  // darkMode$: Observable<boolean>;
+  createDrinkSuccess$: Observable<boolean>;
  
-  // registerForm: FormGroup;
-  // nameInput: FormControl;
-  // emailInput: FormControl;
-  // ageInput: FormControl;
-  // passwordInput: FormControl;
-  // roleInput: FormControl;
+  categories: string[] = [];
+  
  
-  constructor() {
-    this.roles = ['admin', 'user', 'operator'];
+  createForm: FormGroup;
+  nameInput: FormControl;
+  categoryInput: FormControl;
+  ingredientInput: FormControl;
+  measureInput: FormControl;
+  instructionsInput: FormControl;
+  imageInput: FormControl;
+  alcoholicInput: FormControl;
+  editable = new FormControl('true');
  
-    // this.nameInput = new FormControl('', [
-    //   Validators.required,
-    //   CustomValidators.noPepito,
-    // ]);
-    // this.emailInput = new FormControl('', [
-    //   Validators.required,
-    //   Validators.email,
-    // ]);
-    // this.ageInput = new FormControl('', [
-    //   Validators.required,
-    //   CustomValidators.validAge(
-    //     1,
-    //     99
-    //   ) /* Validators.min(1), Validators.max(99) */,
-    // ]);
-    // this.passwordInput = new FormControl('', [
-    //   Validators.required,
-    //   Validators.minLength(6),
-    // ]);
-    // this.roleInput = new FormControl('', Validators.required);
  
-    // this.registerForm = new FormGroup({
-    //   name: this.nameInput,
-    //   email: this.emailInput,
-    //   age: this.ageInput,
-    //   password: this.passwordInput,
-    //   role: this.roleInput,
-    // });
+  constructor(private store: Store<AppState>,
+    private router: Router,) {
+    this.createDrinkSuccess$ = new Observable();
+ 
+    this.nameInput = new FormControl('', [
+      Validators.required
+    ]);
+    this.categoryInput = new FormControl('', [
+      Validators.required
+    ]);
+    this.ingredientInput = new FormControl('', [
+      Validators.required,
+      
+    ]);
+    this.measureInput = new FormControl('', [
+      Validators.required,
+    
+    ]);
+    this.imageInput = new FormControl('', [
+      Validators.required,
+    
+    ]);
+    this.alcoholicInput = new FormControl('', [
+      Validators.required
+    ]);
+    this.instructionsInput = new FormControl('', Validators.required);
+    
+    this.createForm = new FormGroup({
+      name: this.nameInput,
+      category: this.categoryInput,
+      alcoholic: this.alcoholicInput,
+      ingredients: this.ingredientInput,
+      measures: this.measureInput,
+      instructions: this.instructionsInput,
+      image: this.imageInput,
+      editable: this.editable
+    });
   }
  
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.dispatch(loadingDrinks());
+    this.store.select(selectDrinks).subscribe(response=>{ for(let obj of response){
+    if(this.categories.includes(obj.category)){
+      console.log(obj.category)
+      continue;
+    }
+    else{this.categories.push(obj.category)}
+   }})
+   console.log(this.categories)
+  
+  
+  
+    this.createDrinkSuccess$ = this.store.select(selectCreateDrinkSuccess);
+
+    this.store.dispatch(initCreateDrink());
+  }
  
-  onSubmit(): void {
-    console.log('User created...');
+  createCocktail(): void {
+    // Create drink
+    this.createForm.value.ingredients = this.createForm.value.ingredients.trim().split('\n')
+    this.createForm.value.measures = this.createForm.value.measures.trim().split('\n')
+    this.store.dispatch(createDrink({ drink: this.createForm.value}));
+
+    // Check if drink was created
+    this.createDrinkSuccess$.subscribe(success => {
+      if (success) {
+        alert('Cocktail created successfully!');
+        // Navigate to home
+        this.router.navigate(['/']);
+      } else {
+        console.log('fail');
+      }
+    });
+
   }
 }

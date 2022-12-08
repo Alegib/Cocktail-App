@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, Observable } from 'rxjs';
+import { Cocktail } from '../models/cocktail';
 import { Drink } from '../models/drink';
 
 @Injectable({
@@ -12,14 +13,14 @@ export class CocktailService {
   constructor(private http:HttpClient) { }
 
   getAllDrinks(): Observable<Drink[]>{
-    return this.http.get<Drink[]>(this.JSON_DB).pipe(delay(1000));
+    return this.http.get<Drink[]>(this.JSON_DB).pipe(delay(500));
   }
 
   getDrinkById(id: number): Observable<Drink>{
     return this.http.get<Drink>(`${this.JSON_DB}${id}`)
   }
 
-  createDrink(cocktail: Drink): Observable<Drink>{
+  createDrink(cocktail: Cocktail): Observable<Drink>{
     return this.http.post<Drink>(this.JSON_DB, cocktail)
  }
 

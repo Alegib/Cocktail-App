@@ -18,10 +18,16 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CocktailItemComponent } from './components/cocktail-item/cocktail-item.component';
 import { DrinkItemEffects } from './state/effects/drink-item.effect';
 import { ReactiveFormsModule } from '@angular/forms';
-import { deleteDrink } from './state/actions/delete-drink.action';
+
 import { CreateDrinkEffects } from './state/effects/create-drink.effect';
 import { DeleteDrinkEffects } from './state/effects/delete-drink.effect';
 import { EditDrinkEffects } from './state/effects/edit-drink.effect';
+
+import {MatNativeDateModule} from '@angular/material/core';
+
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatIconModule} from '@angular/material/icon';
+import { EditComponent } from './components/edit/edit.component';
 
 
 @NgModule({
@@ -33,7 +39,9 @@ import { EditDrinkEffects } from './state/effects/edit-drink.effect';
     ScrollListComponent,
     CreateCocktailComponent,
     HomePageComponent,
-    CocktailItemComponent
+    CocktailItemComponent,
+    EditComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -42,8 +50,12 @@ import { EditDrinkEffects } from './state/effects/edit-drink.effect';
     BrowserAnimationsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     EffectsModule.forRoot([DrinksEffects, DrinkItemEffects, CreateDrinkEffects, DeleteDrinkEffects, EditDrinkEffects]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatSlideToggleModule,
+    MatIconModule
 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

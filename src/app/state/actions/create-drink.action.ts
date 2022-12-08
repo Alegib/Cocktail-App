@@ -1,5 +1,6 @@
 import { createAction, props } from "@ngrx/store";
-import { Drink } from "src/app/models/drink";
+import { Cocktail } from "src/app/models/cocktail";
+
 
 export const initCreateDrink = createAction(
   '[Create Drink] Init Create Drink',
@@ -7,7 +8,7 @@ export const initCreateDrink = createAction(
 
 export const createDrink = createAction(
   '[Create Drink] Create Drink',
-    props<{ drink: Drink }>()
+    props<{ drink: Cocktail }>()
 );
 
 export const createDrinkSuccess = createAction(
