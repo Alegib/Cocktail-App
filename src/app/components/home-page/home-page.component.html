@@ -10,17 +10,20 @@
     </div>
     <a routerLink="cocktails/create" class="image-box"></a>        
 </div >
-<!-- <section >
+<div class="box-scroll">
     <div class="random-drink-container"  *ngIf="drink$ | async as drink">
-        <h2>{{drink.name}}</h2>
+        <div class="random-drink-text">
+            <h2>Have you ever tried...</h2><br>
+            <h3 class="drink-name">{{drink.name}}?</h3>
+            <p>Check how to make it...</p>
+        </div>
+        
         <a [routerLink]="['cocktails', drink.id]">
-            <img  [src]="drink.image" [alt]="drink.name">
+            <img class="scroll-main-img" [src]="drink.image" [alt]="drink.name">
         </a>
     </div>
-</section> -->
-<!-- <div>
-    <img [src]="cocktail?.image" alt="">
-</div> -->
+    
 
-<app-scroll-list  (getCocktail)="cocktail"></app-scroll-list>
+    <app-scroll-list></app-scroll-list>
+</div>
 

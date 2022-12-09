@@ -12,21 +12,15 @@ import { AppState } from 'src/app/state/app.state';
 })
 export class NavBarComponent {
   
-  // darkMode$: Observable<boolean>;
 
   constructor(
     private store: Store<AppState>,
   ) {
-    // this.darkMode$ = new Observable();
+
   }
 
   ngOnInit(): void {
-    // this.darkMode$ = this.store.select(selectDarkMode);
+
   }
-
-
-  // switchMode(): void {
-  //   this.store.dispatch(switchDarkMode());
-  // }
 
 }
