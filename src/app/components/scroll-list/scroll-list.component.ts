@@ -17,11 +17,7 @@ export class ScrollListComponent {
   loading$: Observable<boolean>;
   drinks$: Observable<Drink[]>;
 
-  cocktail: Drink | undefined;
 
-  @Output()
-  getCocktail = new EventEmitter<Drink>
-  
 
   constructor(private store: Store<AppState>){
     this.loading$ = new Observable<boolean>();
@@ -38,8 +34,5 @@ export class ScrollListComponent {
     
   }
 
-  cocktailInfo(){
-    this.getCocktail.emit(this.cocktail)
-  }
 
 }

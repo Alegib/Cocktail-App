@@ -8,7 +8,7 @@ import { loadingDrinks } from 'src/app/state/actions/drink.actions';
 import { AppState } from 'src/app/state/app.state';
 import { selectDrink } from 'src/app/state/selectors/drink-item.selector';
 import { selectDrinks, selectLoading } from 'src/app/state/selectors/drinks.selector';
-// import { selectDarkMode } from 'src/app/state/selectors/nav-bar.selector';
+
 
 @Component({
   selector: 'app-home-page',
@@ -20,31 +20,29 @@ export class HomePageComponent {
   drink$: Observable<Drink>;
   darkMode$: Observable<boolean>;
   
-  @Input()
-  cocktail: Drink | undefined;
-
-
 
   constructor(
     private route: ActivatedRoute,
     private store: Store<AppState>,
     private router: Router,
   ) {
-    this.id = 0;
+    this.id = this.id = Math.floor(Math.random() * 300) + 1;
     this.drink$ = new Observable<Drink>();
     this.darkMode$ = new Observable<boolean>();
   }
 
   ngOnInit(): void {
     
+    this.store.dispatch(loadingDrinks());
+    
     this.drink$ = this.store.select(selectDrink);
-    // this.darkMode$ = this.store.select(selectDarkMode);
     this.store.select(selectLoading);
     this.store.select(selectDrinks);
-    this.store.dispatch(loadingDrinks());
-    this.store.select(selectDrinks).subscribe(response=> this.id = Math.floor(Math.random() * response.length) + 1)
+    // this.store.select(selectDrinks).subscribe(response=> this.id = Math.floor(Math.random() * response.length) + 1)
     this.store.dispatch(loadingDrink({ id: this.id }));
-   
+    console.log(this.id)
+    
+    
   }
 
   

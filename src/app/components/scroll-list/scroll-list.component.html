@@ -6,7 +6,7 @@
 
     <div class="images-box" *ngIf="!(loading$ | async)" >
       <div *ngFor="let drink of drinks$ | async" >
-      <a [routerLink]="['cocktails', drink.id]" [(ngModel)]="cocktail" >
+      <a [routerLink]="['cocktails', drink.id]">
         
         <img class="images" [src]="drink.image" [alt]="drink.name" >
         <h3 >{{ drink.name }}</h3>
