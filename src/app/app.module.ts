@@ -17,7 +17,7 @@ import { CreateCocktailComponent } from './components/create-cocktail/create-coc
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CocktailItemComponent } from './components/cocktail-item/cocktail-item.component';
 import { DrinkItemEffects } from './state/effects/drink-item.effect';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CreateDrinkEffects } from './state/effects/create-drink.effect';
 import { DeleteDrinkEffects } from './state/effects/delete-drink.effect';
@@ -28,6 +28,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import { EditComponent } from './components/edit/edit.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { EditComponent } from './components/edit/edit.component';
     HomePageComponent,
     CocktailItemComponent,
     EditComponent,
+    FooterComponent,
     
   ],
   imports: [
@@ -53,7 +55,8 @@ import { EditComponent } from './components/edit/edit.component';
     ReactiveFormsModule,
     MatNativeDateModule,
     MatSlideToggleModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
 
     
   ],

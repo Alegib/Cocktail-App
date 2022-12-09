@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+    background-image: url('src/assets/images/edward-howell-rdJhMyb4Yuc-unsplash.jpg');
+    background-position: center center; 
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+   
+}
+

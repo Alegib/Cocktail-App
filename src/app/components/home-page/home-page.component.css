@@ -1,6 +1,87 @@
+header {
+
+    background-image: url('src/assets/images/image.jpg');
+    /* background-image: url('src/assets/images/timur-romanov-GsavR7VMkpk-unsplash.jpg'); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    box-shadow: 0 0 12px 15px black inset;
+    
+
+}
+
+
+
+    
+    
+
+
+
+h1, p {
+    color: white;
+    font-family: cursive;
+}
+p {
+    font-size: 1rem;
+}
 h1 {
+    font-size: 4rem;
+}
+
+.create-drink-box {
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+ 
+    
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+    
+   
+
+}
+
+.image-box {
+    width: 40%;
+    height: 70%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgb(255, 255, 255);
+    transition: 0.5s;
+    background-image: url('src/assets/images/pylyp-sukhenko-Sr3bhcYqftA-unsplash.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:auto;
+    
+
+}
+
+
+  
+
+.image-box:hover {
+    box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+  }
+
+
+h2 {
     font-family:sans-serif;
     text-align: center;
+    color: white;
 }
 
 section {
@@ -10,18 +91,21 @@ section {
     justify-content: center;
 }
 
-div img{
-    width: 50%;
+/* div a{
+    
     height: auto;
- 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+img {
+    width: 50%;
 }
-div  {
+/* div  {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 40%;
-    
-    
-}
+} */
 

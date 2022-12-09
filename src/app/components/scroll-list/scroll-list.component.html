@@ -1,17 +1,17 @@
-<div class="main-box">
+<div class="main-box" >
     <img
         class="main-image"
         src=""
       /> 
 
-    <div class="images-box" *ngIf="!(loading$ | async)">
-      <div *ngFor="let drink of drinks$ | async">
-      <a [routerLink]="['cocktails', drink.id]">
+    <div class="images-box" *ngIf="!(loading$ | async)" >
+      <div *ngFor="let drink of drinks$ | async" >
+      <a [routerLink]="['cocktails', drink.id]" [(ngModel)]="cocktail" >
         
-        <img class="images" [src]="drink.image" [alt]="drink.name">
-        <h3>{{ drink.name }}</h3>
+        <img class="images" [src]="drink.image" [alt]="drink.name" >
+        <h3 >{{ drink.name }}</h3>
       </a>
-      </div>
+      </div >
       
     </div>
   

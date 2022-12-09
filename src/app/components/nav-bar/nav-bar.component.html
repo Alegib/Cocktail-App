@@ -1,4 +1,4 @@
-<nav [ngClass]="{'dark-theme': darkMode$ | async }">
+<nav>
     <ul>
       <li>
         <a
@@ -12,7 +12,6 @@
       <li><a routerLink="cocktails/cocktails" routerLinkActive="active">Cocktails</a></li>
       <li><a routerLink="cocktails/favourites" routerLinkActive="active">Favourites</a></li>
      
-      <mat-slide-toggle [ngClass]="{'btn': true, 'dark-btn': darkMode$ | async}" (toggleChange)="switchMode()" ><span *ngIf="darkMode$ | async">Light</span> <span *ngIf="!(darkMode$ | async)">Dark</span><span> Mode</span></mat-slide-toggle>
     </ul>
   </nav>
   
