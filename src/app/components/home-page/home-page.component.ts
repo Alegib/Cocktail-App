@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { delay, Observable } from 'rxjs';
@@ -19,6 +19,10 @@ export class HomePageComponent {
   id: number;
   drink$: Observable<Drink>;
   darkMode$: Observable<boolean>;
+  
+  @Input()
+  cocktail: Drink | undefined;
+
 
 
   constructor(
@@ -39,9 +43,10 @@ export class HomePageComponent {
     this.store.select(selectDrinks);
     this.store.dispatch(loadingDrinks());
     this.store.select(selectDrinks).subscribe(response=> this.id = Math.floor(Math.random() * response.length) + 1)
-    console.log(this.id)
     this.store.dispatch(loadingDrink({ id: this.id }));
    
   }
+
+  
 
 }

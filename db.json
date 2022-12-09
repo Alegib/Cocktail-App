@@ -1,25 +1,6 @@
 {
   "drinks": [
     {
-      "id": 1,
-      "name": "Adam",
-      "category": "Ordinary Drink",
-      "alcoholic": true,
-      "instructions": "In a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into a cocktail glass.",
-      "image": "https://www.thecocktaildb.com/images/media/drink/v0at4i1582478473.jpg",
-      "ingredients": [
-        "Dark rum",
-        "Lemon juice",
-        "Grenadine"
-      ],
-      "measures": [
-        "2 oz ",
-        "1 oz ",
-        "1 tsp "
-      ],
-      "editable": false
-    },
-    {
       "id": 2,
       "name": "ACID",
       "category": "Shot",
@@ -119,43 +100,6 @@
       "editable": false
     },
     {
-      "id": 7,
-      "name": "Affair",
-      "category": "Ordinary Drink",
-      "alcoholic": true,
-      "instructions": "Pour schnapps, orange juice, and cranberry juice over ice in a highball glass. Top with club soda and serve.",
-      "image": "https://www.thecocktaildb.com/images/media/drink/h5za6y1582477994.jpg",
-      "ingredients": [
-        "Strawberry schnapps",
-        "Orange juice",
-        "Cranberry juice",
-        "Club soda"
-      ],
-      "measures": [
-        "2 oz ",
-        "2 oz ",
-        "2 oz "
-      ],
-      "editable": false
-    },
-    {
-      "id": 8,
-      "name": "A. J.",
-      "category": "Ordinary Drink",
-      "alcoholic": true,
-      "instructions": "Shake ingredients with ice, strain into a cocktail glass, and serve.",
-      "image": "https://www.thecocktaildb.com/images/media/drink/l74qo91582480316.jpg",
-      "ingredients": [
-        "Applejack",
-        "Grapefruit juice"
-      ],
-      "measures": [
-        "1 1/2 oz ",
-        "1 oz "
-      ],
-      "editable": false
-    },
-    {
       "id": 9,
       "name": "Apello",
       "category": "Other/Unknown",
@@ -173,25 +117,6 @@
         "3 cl ",
         "1 cl ",
         "1 "
-      ],
-      "editable": false
-    },
-    {
-      "id": 10,
-      "name": "Abilene",
-      "category": "Ordinary Drink",
-      "alcoholic": true,
-      "instructions": "Pour all of the ingredients into a highball glass almost filled with ice cubes. Stir well.",
-      "image": "https://www.thecocktaildb.com/images/media/drink/smb2oe1582479072.jpg",
-      "ingredients": [
-        "Dark rum",
-        "Peach nectar",
-        "Orange juice"
-      ],
-      "measures": [
-        "1 1/2 oz ",
-        "2 oz ",
-        "3 oz "
       ],
       "editable": false
     },

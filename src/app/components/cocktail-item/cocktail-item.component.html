@@ -16,8 +16,12 @@
         <button>Edit</button>
         <button>Delete</button>
       </div>
+      <div class="example-button-container">
+        <button mat-fab color="primary" (click)="deleteDrink()" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
 
-      <button (click)="deleteDrink()">Delete</button>
       <button (click)="edit(drink.id)">Edit</button>
       
       
