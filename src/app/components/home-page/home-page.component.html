@@ -1,29 +1,35 @@
 <header>
-
-    <h1 class="title-header">Lorem Ipsum... </h1>
+    <div class="logo"></div>
+    <h1 class="title-header">A sip of Joy... </h1>
 </header>
 <div class="create-drink-box">
     <div class="text-box">
-        <h1>Something...</h1>
-        <p>Let's create a new drink....</p>
+        <h1>Creating...</h1>
+        <p>Let's prepare a new drink....</p>
         <button>Create</button>
     </div>
     <a routerLink="cocktails/create" class="image-box"></a>        
 </div >
+<div class="separation-barline"></div>
+
+
 <div class="box-scroll">
     <div class="random-drink-container"  *ngIf="drink$ | async as drink">
         <div class="random-drink-text">
             <h2>Have you ever tried...</h2><br>
             <h3 class="drink-name">{{drink.name}}?</h3>
-            <p>Check how to make it...</p>
+            <p>Check it out...</p>
         </div>
+        <div class="waitress"></div>
         
         <a [routerLink]="['cocktails', drink.id]">
             <img class="scroll-main-img" [src]="drink.image" [alt]="drink.name">
         </a>
+        
     </div>
-    
 
     <app-scroll-list></app-scroll-list>
 </div>
+
+
 

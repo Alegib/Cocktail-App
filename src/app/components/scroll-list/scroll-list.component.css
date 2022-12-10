@@ -1,11 +1,10 @@
 
 .main-box {
-    width: 100%;
+    width: 110%;
     height: 700px;
     /* float: right; */
     margin-right: 10%;
     text-align: center;
-    
 }
 .images-box {
     scroll-snap-type: x mandatory;
@@ -33,14 +32,14 @@ h3 {
 .images{
     width: 8rem;
     border-radius: 51% 49% 50% 50% / 24% 20% 80% 76% ;
-    box-shadow: 1px 5px 7px 0px rgb(255, 255, 255);
+    box-shadow: 1px 5px 7px 0px #c99c31;
     
 }
 .images:hover {
     transition: width 1.2s;
     transition-timing-function: cubic-bezier(.17,.67,.46,.87);
     width: 200px;
-    box-shadow: 0 8px 16px 0 white;
+    box-shadow: 0 8px 16px 0#c99c31;
 }
 
 

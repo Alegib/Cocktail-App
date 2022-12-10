@@ -1,0 +1,75 @@
+.body{
+    display: flex;
+
+}
+h1 {
+    font-size: 4rem;
+}
+
+h1, p, h3, li{
+    font-family: cursive;
+
+}
+
+h3 {
+    font-size: 2rem;
+    color: #c99c31;
+}
+
+p, li {
+    font-size: 1rem;
+}
+
+.main-box {
+    
+    
+    background-color: white;
+    margin:10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+
+
+}
+.hidden-buttons-box {
+
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+img {
+    float: right;
+    width: 100%;
+}
+
+.img-box {
+    box-shadow: 10px 4px 8px 100px black inset;
+    z-index: 1;
+    
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    z-index: 1;
+    
+
+}
+
+ul {
+    list-style: none;
+}
+
+.instructions-box {
+    margin-top: 5%;
+
+}
+
+.ingredients-box {
+    margin-top: 5%;
+
+}
+
