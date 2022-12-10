@@ -1,30 +1,34 @@
-<!-- <section [ngClass]="{'dark-theme': darkMode$ | async}"> -->
-    <div  *ngIf="drink$ | async as drink">
-      <a [routerLink]="['cocktail', drink.id]">
-        <h2>{{ drink.name }}</h2>
-        <img [src]="drink.image" [alt]="drink.name">
-      </a>
-      <h3>Ingredients:</h3>
-      <ul>
-        <li *ngFor="let ing of drink.ingredients, index as i">{{ing}} - {{drink.measures[i]}}</li>
-      </ul>
 
+    <div class="body" *ngIf="drink$ | async as drink">
+      <div class="main-box">
+  
+        <div class="text-box">
+      <h1 class="cocktail-name">{{ drink.name }}</h1>
+      <div class="ingredients-box">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li *ngFor="let ing of drink.ingredients, index as i">{{ing}} - {{drink.measures[i]}}</li>
+        </ul>
+    </div>
+    <div class="instructions-box">
       <h3>Instructions:</h3>
       <p>{{drink.instructions}}</p>
-      <p></p>
-      <div *ngIf="drink.editable">
-        <button>Edit</button>
-        <button>Delete</button>
-      </div>
-      <div class="example-button-container">
-        <button mat-fab color="primary" (click)="deleteDrink()" aria-label="Example icon button with a delete icon">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-
-      <button (click)="edit(drink.id)">Edit</button>
+    </div>
+    <div class="hidden-buttons-box"  >
+      <button mat-fab color="primary" color="primary" (click)="edit(drink.id)" aria-label="Example icon button with a edit icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-fab color="warn" (click)="deleteDrink()" aria-label="Example icon button with a delete icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <!-- *ngIf="drink.editable"-->
+  <div class="img-box">
+      <img [src]="drink.image" [alt]="drink.name">
+    </div>
       
-      
+  </div>
       
       <!-- <a class="back-btn" [routerLink]="['']">Back</a> -->
     </div>

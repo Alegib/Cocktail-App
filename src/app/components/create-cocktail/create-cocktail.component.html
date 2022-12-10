@@ -11,7 +11,7 @@
       </div>
       <div>
         <select [formControl]="categoryInput">
-          <option value="" invalid>Select a gender</option>
+          <option value="" invalid>Select a category</option>
           <option *ngFor="let category of categories" [value]="category">
             {{ category | titlecase }}
           </option>
@@ -56,7 +56,8 @@
         </p>
       </div>
       
-      <button type="submit" [disabled]="createForm.invalid">Submit</button>
+      <button class="submit-button" type="submit" [disabled]="createForm.invalid" mat-button color="warn">Create</button>
+
     </form>
   </div>
 
