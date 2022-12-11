@@ -4,7 +4,8 @@ import { CocktailItemComponent } from './components/cocktail-item/cocktail-item.
 import { CreateCocktailComponent } from './components/create-cocktail/create-cocktail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { UserPageComponent } from './components/user-page/user-page.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 
 const routes: Routes = [
   {
@@ -20,12 +21,12 @@ const routes: Routes = [
     component: CocktailItemComponent
   },
   {
-    path: 'cocktails/favourites',
-    component: UserPageComponent
-  },
-  {
     path: 'cocktails/edit/:id',
     component: EditComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   },
 ];
 

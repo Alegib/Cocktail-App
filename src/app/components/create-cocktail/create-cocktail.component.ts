@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { min, Observable } from 'rxjs';
 import { Drink } from 'src/app/models/drink';
 import { createDrink, initCreateDrink } from 'src/app/state/actions/create-drink.action';
 import { loadingDrinks } from 'src/app/state/actions/drink.actions';
@@ -20,7 +20,7 @@ export class CreateCocktailComponent {
   createDrinkSuccess$: Observable<boolean>;
  
   categories: string[] = [];
-  
+  id: number;
  
   createForm: FormGroup;
   nameInput: FormControl;
@@ -44,11 +44,11 @@ export class CreateCocktailComponent {
       Validators.required
     ]);
     this.ingredientInput = new FormControl('', [
-      Validators.required,
+      Validators.required, Validators.max(40)
       
     ]);
     this.measureInput = new FormControl('', [
-      Validators.required,
+      Validators.required, Validators.max(40)
     
     ]);
     this.imageInput = new FormControl('', [
@@ -56,7 +56,7 @@ export class CreateCocktailComponent {
     
     ]);
     this.alcoholicInput = new FormControl();
-    this.instructionsInput = new FormControl('', Validators.required);
+    this.instructionsInput = new FormControl('', [Validators.required, Validators.min(5), Validators.max(200)]);
     
     this.createForm = new FormGroup({
       name: this.nameInput,
@@ -68,21 +68,23 @@ export class CreateCocktailComponent {
       image: this.imageInput,
       editable: this.editable
     });
+
+    this.id = 0;
   }
  
   ngOnInit(): void {
     this.store.dispatch(loadingDrinks());
     this.store.select(selectDrinks).subscribe(response=>{ for(let obj of response){
+    if(obj.id > this.id){
+        this.id = obj.id;
+    }
     if(this.categories.includes(obj.category)){
       console.log(obj.category)
       continue;
     }
     else{this.categories.push(obj.category)}
    }})
-   console.log(this.categories)
-  
-  
-  
+
     this.createDrinkSuccess$ = this.store.select(selectCreateDrinkSuccess);
 
     this.store.dispatch(initCreateDrink());
@@ -99,7 +101,7 @@ export class CreateCocktailComponent {
       if (success) {
         alert('Cocktail created successfully!');
         // Navigate to home
-        this.router.navigate(['/']);
+        this.router.navigate(['cocktails/', this.id+1]);
       } else {
         console.log('fail');
       }

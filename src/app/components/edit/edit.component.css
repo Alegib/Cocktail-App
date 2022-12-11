@@ -1,0 +1,128 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.body-box {
+    display: flex;
+    /* align-items: center; */
+    width: 80%;
+    height: 80%;
+    padding: 10%
+}
+
+.form-container {
+    width: 50%;
+    
+}
+h3, li {
+    font-family: cursive;
+}
+form {
+    width: 100%;
+}
+
+
+.text-box {
+    text-align: center;
+}
+.cocktail-name {
+    color: #c99c31;
+}
+.instructions-box {
+    margin-top: 4%;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 4%;
+}
+.img-box {
+    width: 100%;
+    height: 50%;
+    display: flex;
+
+    
+}
+.main-box img{
+    width: 100%;
+    height: 100%;
+
+
+}
+.form-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    font-family: cursive;
+}
+.card-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding-top: 5%;
+    
+    
+}
+textarea {
+    resize: none;
+  }
+
+.create-button {
+    background-clip: text;
+	-webkit-background-clip: text;
+    font-family: cursive;
+    border-radius: 10%;
+    font-size: 1em;
+    height: 30px;
+    width: 100px;
+    border-color: #c99c31;
+}
+.text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text-box h1 {
+    font-size: 4rem;
+    line-height: 1;
+}
+ul {
+    list-style: none;
+}
+
+form {
+   
+}
+
+h1 {
+    font-family: cursive;
+}
+
+.form-fields {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: cursive;
+}
+
+mat-label {
+    font-family: cursive;
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.8rem;
+    opacity: 80%;
+    font-family: cursive;
+}
+
+.checkbox{
+    margin-bottom: 5%;
+    font-family: cursive;
+}
+

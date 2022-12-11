@@ -5,12 +5,23 @@
     padding: 1%;
     background-color: white;
     margin: auto;
-    width: 70%;
-    height: 85%;
-    margin-top: 10%;
-    font-family: cursive;
 
+    width: 80%;
+    height: 85%;
+    font-family: cursive;
+    box-sizing: content-box;
 }
+
+body {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    margin-bottom: -5%;
+    margin-top: 5%;
+}
+textarea {
+    resize: none;
+  }
 
 .create-button {
     background-clip: text;
@@ -26,7 +37,7 @@
 
 
 form {
-    width: 80%;
+    width: 90%;
 }
 
 h1 {

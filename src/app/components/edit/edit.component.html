@@ -1,52 +1,91 @@
-<app-cocktail-item></app-cocktail-item>
 
-
-
-
-<!-- <div class="container">
-    <form (ngSubmit)="editDrink()" [formGroup]="editForm">
-      <div>
-        <input type="text" placeholder="Name..." [formControl]="nameInput" />
+<body>
+  <div class="body-box">
+  <div class="form-container">
+    
+      <form (ngSubmit)="editDrink()" [formGroup]="editForm">
+        <h1 class="form-title">Edit your Drink!</h1>
+        <mat-form-field id="name-form" class="form-fields">
+          <input matNativeControl type="text" placeholder="Name..." [formControl]="nameInput" />
+          <mat-error class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
+            The name is <strong>required</strong>
+          </mat-error>  
+        </mat-form-field>
+  
+        <mat-form-field id="category-form" class="form-fields">
+          <select matNativeControl [formControl]="categoryInput">
+            <option value="" invalid>Select a category</option>
+            <option *ngFor="let category of categories" [value]="category">
+              {{ category | titlecase }}
+            </option>
+          </select>
+          <mat-error class="error-msg" *ngIf="categoryInput.invalid && categoryInput.touched">
+            Please, select a category.
+          </mat-error>
+        </mat-form-field>
         
-      </div>
-
-      <div>
-        <input type="text"  [formControl]="imageInput" />
-       
-      </div>
-      <div>
-        <input type="text"  [formControl]="instructionsInput" />
-
-      </div>
-      <div>
-        <select [formControl]="categoryInput">
-          <option value="" invalid>Select a gender</option>
-          <option *ngFor="let category of categories" [ngValue]="category">
-            {{ category | titlecase }}
-          </option>
-        </select>
+        <mat-form-field id="image-form" class="form-fields">
+          <input matNativeControl type="text" placeholder="Image Url..." [formControl]="imageInput"  />
+          <mat-error class="error-msg" *ngIf="imageInput.invalid && imageInput.touched">
+            The image-url is <strong>required</strong>
+          </mat-error>  
+        </mat-form-field>
+  
+        <mat-form-field id="instructions-form" class="form-fields">
+          <textarea matNativeControl type="text" placeholder="Instructions..." [formControl]="instructionsInput"></textarea>
+          <mat-error
+            class="error-msg"
+            *ngIf="instructionsInput.invalid 
+                    && instructionsInput.touched"
+          >
+            Please, write the instructions...
+          </mat-error>
+        </mat-form-field>
         
-      </div>
-      <div>
-        <label for="alcoholic">Alcoholic</label>
-        <input id="alcoholic" type="checkbox"  [formControl]="alcoholicInput" />
+        <mat-form-field id="ingredients-form" class="form-fields">
+          <mat-label class="mat-label">Ingredients</mat-label>
+          <textarea matNativeControl name="ingredients" placeholder="First Ingredient...&#10;Second Ingredient..." [formControl]="ingredientInput"></textarea>
+          <mat-error class="error-msg" *ngIf="ingredientInput.invalid && ingredientInput.touched">
+            Ingredients are <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field id="measures-form" class="form-fields">
+          <mat-label>Measures</mat-label>
+          <textarea matNativeControl type="text"  placeholder="First Measure...&#10;Second Measure..." [formControl]="measureInput"></textarea>
+          <mat-error class="error-msg" *ngIf="measureInput.invalid && measureInput.touched">
+            Measures are <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <label for="alcoholic">Contains Alcohol </label>
+        <input type="checkbox" [formControl]="alcoholicInput" class="checkbox" name="alcoholic"><br>
+        <button class="create-button" type="submit" [disabled]="editForm.invalid" color="warn">Edit</button>
         
-      </div>
-      <div>
-        <label for="ingredients">Ingredients</label>
-        <textarea name="ingredients" cols="30" rows="10" placeholder="First Ingredient...&#10;Second Ingredient..." [formControl]="ingredientInput"></textarea>
-        <p class="error-msg" *ngIf="ingredientInput.invalid && ingredientInput.touched">
-          Ingredient error.....
-        </p>
-      </div>
-      <div>
-        <label for="measures">Measures</label>
-        <textarea type="text" cols="30" rows="10" placeholder="First Measure...&#10;Second Measure..." [formControl]="measureInput"></textarea>
-        <p class="error-msg" *ngIf="measureInput.invalid && measureInput.touched">
-          Measures error.....
-        </p>
-      </div>
-      <button type="submit" [disabled]="editForm.invalid">Edit</button>
-    </form>
+      </form>
+      
+    </div>
+
+    <div class="card-box" *ngIf="drink$ | async as drink">
+      <div class="main-box">
+        <div class="text-box">
+      <h1 class="cocktail-name">{{ drink.name }}</h1>
+      <div class="ingredients-box">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li *ngFor="let ing of drink.ingredients, index as i">{{ing}} - {{drink.measures[i]}}</li>
+        </ul>
+    </div>
+    <div class="instructions-box">
+      <h3>Instructions:</h3>
+      <p class="instructions">{{drink.instructions}}</p>
+    </div>
   </div>
-  -->
+  <div class="img-box">
+    <img [src]="drink.image" [alt]="drink.name">
+  </div>
+  </div>
+</div>
+
+</div>
+  </body>
+
