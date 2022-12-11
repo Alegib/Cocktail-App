@@ -2,63 +2,70 @@
     
 
 <div class="container">
+  
     <form (ngSubmit)="createCocktail()" [formGroup]="createForm">
-      <div>
-        <input type="text" placeholder="Name..." [formControl]="nameInput" />
-        <p class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
-          Name error.....
-        </p>
-      </div>
-      <div>
-        <select [formControl]="categoryInput">
+      <h1>Create a cocktail</h1>
+      <mat-form-field id="name-form" class="form-fields">
+        <input matNativeControl type="text" placeholder="Name..." [formControl]="nameInput" />
+        <mat-error class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
+          The name is <strong>required</strong>
+        </mat-error>  
+      </mat-form-field>
+
+      <mat-form-field id="category-form" class="form-fields">
+        <select matNativeControl [formControl]="categoryInput">
           <option value="" invalid>Select a category</option>
           <option *ngFor="let category of categories" [value]="category">
             {{ category | titlecase }}
           </option>
         </select>
-        <p class="error-msg" *ngIf="categoryInput.invalid && categoryInput.touched">
-          Category error.....
-        </p>
-      </div>
-      <div>
-        <input type="text" placeholder="Image Url..." [formControl]="imageInput" />
-        <p class="error-msg" *ngIf="imageInput.invalid && imageInput.touched">
-          Image error.....
-        </p>
-      </div>
-      <div>
-        <textarea type="text" placeholder="Instructions..." [formControl]="instructionsInput"></textarea>
-        <p
+        <mat-error class="error-msg" *ngIf="categoryInput.invalid && categoryInput.touched">
+          Please, select a category.
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field id="image-form" class="form-fields">
+        <input matNativeControl type="text" placeholder="Image Url..." [formControl]="imageInput"  />
+        <mat-error class="error-msg" *ngIf="imageInput.invalid && imageInput.touched">
+          The image-url is <strong>required</strong>
+        </mat-error>  
+      </mat-form-field>
+
+      <mat-form-field id="instructions-form" class="form-fields">
+        <textarea matNativeControl type="text" placeholder="Instructions..." [formControl]="instructionsInput"></textarea>
+        <mat-error
           class="error-msg"
           *ngIf="instructionsInput.invalid 
                   && instructionsInput.touched"
         >
-          Instructions error.....
-        </p>
-      </div>
+          Please, write the instructions...
+        </mat-error>
+      </mat-form-field>
       
-      <div>
-        <label for="alcoholic">Alcoholic</label>
-        <input id="alcoholic" type="checkbox"  [formControl]="alcoholicInput" />
-      </div>
-      <div>
-        <label for="ingredients">Ingredients</label>
-        <textarea name="ingredients" cols="30" rows="10" placeholder="First Ingredient...&#10;Second Ingredient..." [formControl]="ingredientInput"></textarea>
-        <p class="error-msg" *ngIf="ingredientInput.invalid && ingredientInput.touched">
-          Ingredient error.....
-        </p>
-      </div>
-      <div>
-        <label for="measures">Measures</label>
-        <textarea type="text" cols="30" rows="10" placeholder="First Measure...&#10;Second Measure..." [formControl]="measureInput"></textarea>
-        <p class="error-msg" *ngIf="measureInput.invalid && measureInput.touched">
-          Measures error.....
-        </p>
-      </div>
+    
       
-      <button class="submit-button" type="submit" [disabled]="createForm.invalid" mat-button color="warn">Create</button>
 
+      <mat-form-field id="ingredients-form" class="form-fields">
+        <mat-label class="mat-label">Ingredients</mat-label>
+        <textarea matNativeControl name="ingredients" placeholder="First Ingredient...&#10;Second Ingredient..." [formControl]="ingredientInput"></textarea>
+        <mat-error class="error-msg" *ngIf="ingredientInput.invalid && ingredientInput.touched">
+          Ingredients are <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field id="measures-form" class="form-fields">
+        <mat-label>Measures</mat-label>
+        <textarea matNativeControl type="text"  placeholder="First Measure...&#10;Second Measure..." [formControl]="measureInput"></textarea>
+        <mat-error class="error-msg" *ngIf="measureInput.invalid && measureInput.touched">
+          Measures are <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <label for="alcoholic">Contains Alcohol </label>
+      <input type="checkbox" [formControl]="alcoholicInput" class="checkbox" name="alcoholic"><br>
+      <button class="create-button" type="submit" [disabled]="createForm.invalid" color="warn">Create</button>
+      
     </form>
+    
   </div>
 
 </body>

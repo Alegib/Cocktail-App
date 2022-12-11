@@ -6,7 +6,7 @@
     <div class="text-box">
         <h1>Creating...</h1>
         <p>Let's prepare a new drink....</p>
-        <button>Create</button>
+        <button class="create-button" (click)="create()">Create</button>
     </div>
     <a routerLink="cocktails/create" class="image-box"></a>        
 </div >
@@ -16,10 +16,11 @@
 <div class="box-scroll">
     <div class="random-drink-container"  *ngIf="drink$ | async as drink">
         <div class="random-drink-text">
-            <h2>Have you ever tried...</h2><br>
+            <h2 class="scoll-title">Have you ever tried...</h2><br>
             <h3 class="drink-name">{{drink.name}}?</h3>
-            <p>Check it out...</p>
+            <!-- <p class="p-scroll">Check it out...</p> -->
         </div>
+        
         <div class="waitress"></div>
         
         <a [routerLink]="['cocktails', drink.id]">

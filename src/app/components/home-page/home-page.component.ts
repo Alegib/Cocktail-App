@@ -45,6 +45,9 @@ export class HomePageComponent {
     
   }
 
+  create(){
+    this.router.navigate(['cocktails/create'])
+  }
   
 
 }

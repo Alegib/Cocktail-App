@@ -12,9 +12,9 @@
     </div>
     <div class="instructions-box">
       <h3>Instructions:</h3>
-      <p>{{drink.instructions}}</p>
+      <p class="instructions">{{drink.instructions}}</p>
     </div>
-    <div class="hidden-buttons-box"  >
+    <div class="hidden-buttons-box" *ngIf="drink.editable" >
       <button mat-fab color="primary" color="primary" (click)="edit(drink.id)" aria-label="Example icon button with a edit icon">
         <mat-icon>edit</mat-icon>
       </button>
@@ -23,7 +23,7 @@
       </button>
     </div>
   </div>
-  <!-- *ngIf="drink.editable"-->
+
   <div class="img-box">
       <img [src]="drink.image" [alt]="drink.name">
     </div>

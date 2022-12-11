@@ -55,9 +55,7 @@ export class CreateCocktailComponent {
       Validators.required,
     
     ]);
-    this.alcoholicInput = new FormControl('', [
-      Validators.required
-    ]);
+    this.alcoholicInput = new FormControl();
     this.instructionsInput = new FormControl('', Validators.required);
     
     this.createForm = new FormGroup({
@@ -108,4 +106,6 @@ export class CreateCocktailComponent {
     });
 
   }
+
+
 }
