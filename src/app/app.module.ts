@@ -31,6 +31,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatSlideToggleModule,
     MatIconModule,
     FormsModule,
+    MatInputModule,
     MatButtonModule
 
     
