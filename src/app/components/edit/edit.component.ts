@@ -35,6 +35,7 @@ export class EditComponent {
   instructionsInput: FormControl;
   imageInput: FormControl;
   alcoholicInput: FormControl;
+  editable = new FormControl('true');
   
   
  
@@ -62,13 +63,16 @@ export class EditComponent {
     ingredients: this.ingredientInput,
     measures: this.measureInput,
     instructions: this.instructionsInput,
-    image: this.imageInput
+    image: this.imageInput,
+    editable: this.editable
   });
 }
 
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
     this.store.dispatch(loadingDrinks());
+    this.drink$ = this.store.select(selectDrink);
     this.store.select(selectDrinks).subscribe(response=>{ for(let obj of response){
     if(this.categories.includes(obj.category)){
       console.log(obj.category)
@@ -89,7 +93,6 @@ export class EditComponent {
           measures: drink.measures.join("\n"),
           instructions: drink.instructions,
           image: drink.image,
-          editable: true
         })
       }
     })

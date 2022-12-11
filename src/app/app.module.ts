@@ -7,9 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
-import { RandomCocktailComponent } from './components/random-cocktail/random-cocktail.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { UserPageComponent } from './components/user-page/user-page.component';
 import { ScrollListComponent } from './components/scroll-list/scroll-list.component';
 import { ROOT_REDUCERS } from './state/app.state';
 import { DrinksEffects } from './state/effects/cocktail.effect';
@@ -32,19 +30,19 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from "@angular/material/input";
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RandomCocktailComponent,
     NavBarComponent,
-    UserPageComponent,
     ScrollListComponent,
     CreateCocktailComponent,
     HomePageComponent,
     CocktailItemComponent,
     EditComponent,
     FooterComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
@@ -62,7 +60,6 @@ import { MatInputModule } from "@angular/material/input";
     MatInputModule,
     MatButtonModule
 
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

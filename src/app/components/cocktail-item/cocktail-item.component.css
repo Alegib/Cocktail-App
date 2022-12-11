@@ -1,9 +1,14 @@
 .body{
     display: flex;
+    padding: 0;
+    margin: 0;
 
 }
 h1 {
     font-size: 4rem;
+}
+.cocktail-name{
+    line-height: 1;
 }
 
 h1, p, h3, li{
@@ -24,11 +29,12 @@ p, li {
     
     width: 80%;
     background-color: white;
-    margin:10%;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    margin-bottom: 1.5%;
+    margin-top: 6%;
     
 }
 .hidden-buttons-box {

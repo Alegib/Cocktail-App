@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { exhaustMap, map, mergeMap } from "rxjs";
+import {  map, mergeMap } from "rxjs";
 import { CocktailService } from "src/app/services/cocktail.service";
 import { loadDrinks, loadingDrinks } from "../actions/drink.actions";
 
