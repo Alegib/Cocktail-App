@@ -53,6 +53,13 @@ Foooter Component
 ## 404-Page
 ![alt text](src/assets/images/pageNotFound.png)
 
+## Task management
+Trello:
+
+https://trello.com/invite/b/52VOIz9H/ATTI720de660c93047b1df4cc9442ebe8cb91CA9F509/project-management
+
+## Presentation
+https://docs.google.com/presentation/d/1tmlBJngKBDPy4g3Am-jRy-_CiWsbXoQcGk-QOz7nnLE/edit?usp=sharing
 
 ## Development server
 
