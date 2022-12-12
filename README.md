@@ -1,7 +1,8 @@
 # CocktailApp
 
-This 
-This project was generated with [Angular CLI] version 15.0.1.
+This project is about a fictional cocktail's brand app that gives access to several recipies and allows the user to create his own drink, edit and delete it.
+
+Generated with [Angular CLI] version 15.0.1.
 
 
 
@@ -29,28 +30,28 @@ Homepage Component:
 Item Component:
 - Image and details
 
-Nav-Bar Component
-
 Creation Component:
 - Form 
 
 Edit Component:
-- Form 
+- Form & detail card
 
+Nav-Bar Component
 Foooter Component
 
 404 Page
 
 ## Home-page
-![alt text](src/assets/images/Screenshot 2022-12-12 at 00.54.32.png)
-![alt text](src/assets/images/Screenshot 2022-12-12 at 00.54.24.png)
-![alt text](src/assets/images/Screenshot 2022-12-12 at 00.54.13.png)
+![alt text](src/assets/images/Intro-home.png)
+
+![alt text](src/assets/images/creating.png)
+![alt text](src/assets/images/scroll-list.png)
 
 ## Detail-page
-![alt text](src/assets/images/Screenshot 2022-12-12 at 00.57.12.png)
+![alt text](src/assets/images/detail-page.png)
 
 ## 404-Page
-![alt text](src/assets/images/Screenshot 2022-12-12 at 01.00.52.png)
+![alt text](src/assets/images/pageNotFound.png)
 
 ## Development server
 
