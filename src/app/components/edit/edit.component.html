@@ -2,16 +2,16 @@
 <body>
   <div class="body-box">
   <div class="form-container">
-    
+
       <form (ngSubmit)="editDrink()" [formGroup]="editForm">
         <h1 class="form-title">Edit your Drink!</h1>
         <mat-form-field id="name-form" class="form-fields">
           <input matNativeControl type="text" placeholder="Name..." [formControl]="nameInput" />
           <mat-error class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
             The name is <strong>required</strong>
-          </mat-error>  
+          </mat-error>
         </mat-form-field>
-  
+
         <mat-form-field id="category-form" class="form-fields">
           <select matNativeControl [formControl]="categoryInput">
             <option value="" invalid>Select a category</option>
@@ -23,25 +23,25 @@
             Please, select a category.
           </mat-error>
         </mat-form-field>
-        
+
         <mat-form-field id="image-form" class="form-fields">
           <input matNativeControl type="text" placeholder="Image Url..." [formControl]="imageInput"  />
           <mat-error class="error-msg" *ngIf="imageInput.invalid && imageInput.touched">
             The image-url is <strong>required</strong>
-          </mat-error>  
+          </mat-error>
         </mat-form-field>
-  
+
         <mat-form-field id="instructions-form" class="form-fields">
           <textarea matNativeControl type="text" placeholder="Instructions..." [formControl]="instructionsInput"></textarea>
           <mat-error
             class="error-msg"
-            *ngIf="instructionsInput.invalid 
+            *ngIf="instructionsInput.invalid
                     && instructionsInput.touched"
           >
             Please, write the instructions...
           </mat-error>
         </mat-form-field>
-        
+
         <mat-form-field id="ingredients-form" class="form-fields">
           <mat-label class="mat-label">Ingredients</mat-label>
           <textarea matNativeControl name="ingredients" placeholder="First Ingredient...&#10;Second Ingredient..." [formControl]="ingredientInput"></textarea>
@@ -49,7 +49,7 @@
             Ingredients are <strong>required</strong>
           </mat-error>
         </mat-form-field>
-  
+
         <mat-form-field id="measures-form" class="form-fields">
           <mat-label>Measures</mat-label>
           <textarea matNativeControl type="text"  placeholder="First Measure...&#10;Second Measure..." [formControl]="measureInput"></textarea>
@@ -59,10 +59,10 @@
         </mat-form-field>
         <label for="alcoholic">Contains Alcohol </label>
         <input type="checkbox" [formControl]="alcoholicInput" class="checkbox" name="alcoholic"><br>
-        <button class="create-button" type="submit" [disabled]="editForm.invalid" color="warn">Edit</button>
-        
+        <button class="edit-button" type="submit" [disabled]="editForm.invalid" color="warn">Edit</button>
+
       </form>
-      
+
     </div>
 
     <div class="card-box" *ngIf="drink$ | async as drink">
@@ -81,7 +81,7 @@
     </div>
   </div>
   <div class="img-box">
-    <img [src]="drink.image" [alt]="drink.name">
+    <img [src]="drink.image" alt="Image not found, write the correct path...">
   </div>
   </div>
 </div>

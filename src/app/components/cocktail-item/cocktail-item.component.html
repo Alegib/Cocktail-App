@@ -1,7 +1,7 @@
 
     <div class="body" *ngIf="drink$ | async as drink">
       <div class="main-box">
-  
+
         <div class="text-box">
       <h1 class="cocktail-name">{{ drink.name }}</h1>
       <div class="ingredients-box">
@@ -25,11 +25,11 @@
   </div>
 
   <div class="img-box">
-      <img [src]="drink.image" [alt]="drink.name">
+      <img [src]="drink.image" alt="Image not found...">
     </div>
-      
+
   </div>
-      
+
       <!-- <a class="back-btn" [routerLink]="['']">Back</a> -->
     </div>
   <!-- </section> -->
