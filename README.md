@@ -3,13 +3,6 @@
 This 
 This project was generated with [Angular CLI] version 15.0.1.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 
 ## Wireframe
@@ -23,7 +16,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 - Typescript
 - HTML
 - CSS
-
 
 
 ## Components and Pages structure
@@ -48,6 +40,25 @@ Edit Component:
 Foooter Component
 
 404 Page
+
+## Home-page
+![alt text](src/assets/images/Screenshot 2022-12-12 at 00.54.32.png)
+![alt text](src/assets/images/Screenshot 2022-12-12 at 00.54.24.png)
+![alt text](src/assets/images/Screenshot 2022-12-12 at 00.54.13.png)
+
+## Detail-page
+![alt text](src/assets/images/Screenshot 2022-12-12 at 00.57.12.png)
+
+## 404-Page
+![alt text](src/assets/images/Screenshot 2022-12-12 at 01.00.52.png)
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 
 
