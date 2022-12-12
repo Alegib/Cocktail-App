@@ -43,15 +43,18 @@ Foooter Component
 ## Home-page
 
 ![alt text](src/assets/images/Intro-home.png)
-
 ![alt text](src/assets/images/creating.png)
 ![alt text](src/assets/images/scroll-list.png)
 
 ## Detail-page
 ![alt text](src/assets/images/detail-page.png)
 
+## Create-form
+![alt text](src/assets/images/create-form.png)
+
 ## 404-Page
 ![alt text](src/assets/images/pageNotFound.png)
+
 
 ## Task management
 Trello:

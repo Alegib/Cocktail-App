@@ -1,54 +1,124 @@
 .container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 1%;
     background-color: white;
     margin: auto;
+    flex-direction: column;
+
 
     width: 80%;
-    height: 85%;
+    height: 100%;
     font-family: cursive;
-    box-sizing: content-box;
 }
 
 body {
     width: 100%;
     box-sizing: border-box;
-    height: 100%;
-    margin-bottom: -5%;
+    height: 70%;
     margin-top: 5%;
 }
+
+.form-box1{
+    width: 50%;
+    margin: auto;
+    padding-right: 1%;
+
+}
+.form-box2{
+    width: 50%;
+    margin: auto;
+    padding-left: 1%;
+    position: relative;
+    bottom: 7px;
+}
+#category-form {
+
+    /* position: relative;
+    top: 20px; */
+}
+
+#image-form {
+
+    /* position: relative;
+    top: 23px; */
+
+}
+#instructions-form, #ingredients-form, #measures-form {
+    height: 80px;
+
+}
+#instructions-form {
+    position: relative;
+    bottom: 1px
+}
+#measures-form, #ingredients-form{
+    position: relative;
+    bottom: 5px;
+}
+
 textarea {
+
     resize: none;
   }
 
 .create-button {
-    background-clip: text;
-	-webkit-background-clip: text;
+    position:absolute;
+    bottom: 22%;
+    color: white;
+
+
     font-family: cursive;
-    border-radius: 10%;
-    font-size: 1em;
-    height: 30px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    height: 100px;
     width: 100px;
     border-color: #c99c31;
+    background-color: black;
+    margin: auto;
+    opacity: 70%;
+    transition: 1.5s;
 }
 
 
 
+.create-button:enabled {
+    background-clip:content-box;
+
+  cursor:pointer;
+
+	  color: black;
+	  background-image: url('src/assets/images/photo-1589517628174-5698bcf47311.avif');
+    background-size: 500px 500px;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 2px 2px#c99c31;
+    opacity: 100%;
+
+}
+
 form {
-    width: 90%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 4%;
+
 }
 
 h1 {
     font-family: cursive;
+    text-align: center;
+    font-size: 4rem;
+    color: black;
+
 }
+
 
 .form-fields {
     color: white;
     display: flex;
     flex-direction: column;
     font-family: cursive;
+
 }
 
 
@@ -64,7 +134,7 @@ mat-label {
 }
 
 .checkbox{
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
     font-family: cursive;
 }
 
