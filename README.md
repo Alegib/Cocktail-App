@@ -5,7 +5,6 @@ This project is about a fictional cocktail's brand app that gives access to seve
 Generated with [Angular CLI] version 15.0.1.
 
 
-
 ## Wireframe
 
 ![alt text](src/assets/images/wireframe.svg)
@@ -42,6 +41,7 @@ Foooter Component
 404 Page
 
 ## Home-page
+
 ![alt text](src/assets/images/Intro-home.png)
 
 ![alt text](src/assets/images/creating.png)
@@ -52,6 +52,7 @@ Foooter Component
 
 ## 404-Page
 ![alt text](src/assets/images/pageNotFound.png)
+
 
 ## Development server
 
